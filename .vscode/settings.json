@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e103b203-bb93-4c5e-bf30-6bfd07e69123/resourceGroups/legal/providers/Microsoft.Web/sites/legalmarker",
+    "appService.deploySubpath": "publish"
+}
