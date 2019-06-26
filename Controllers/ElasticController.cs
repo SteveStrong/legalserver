@@ -24,10 +24,11 @@ namespace legalserver.Controllers
         [HttpGet("Find")]
         public async Task<IEnumerable<string>> Find(string query, int page = 1, int pageSize = 5)
         {
-            var response = await _elasticClient.SearchAsync<object>(
+            var response = await _elasticClient.SearchAsync<Object>(
                 s => s.Query(q => q.QueryString(d => d.Query(query)))
-                    .From((page - 1) * pageSize)
-                    .Size(pageSize));
+            );
+        
+                    
 
             //ViewData["Title"] = _settings.Value.Name + " - Search Results";
             //ViewData["Description"] = _settings.Value.Description;
