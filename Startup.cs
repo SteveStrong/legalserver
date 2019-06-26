@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NSwag.AspNetCore;
+using Elasticsearch.Net;
+using Nest;
 using System;
 
 namespace legalserver
@@ -27,6 +29,8 @@ namespace legalserver
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddElasticsearch(Configuration);
+
             services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
              {
                  builder
