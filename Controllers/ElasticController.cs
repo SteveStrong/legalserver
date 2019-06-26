@@ -50,11 +50,11 @@ namespace legalserver.Controllers
 
             return new string[] { "value1", "value2" };
         }
-        [HttpGet("MoreLikeThis")]
-        public ActionResult<IEnumerable<string>> MoreLikeThis( string value)
-        {
-            return new string[] { "value1", "value2" };
-        }
+        // [HttpGet("MoreLikeThis")]
+        // public ActionResult<IEnumerable<string>> MoreLikeThis( string value)
+        // {
+        //     return new string[] { "value1", "value2" };
+        // }
 
         
 
