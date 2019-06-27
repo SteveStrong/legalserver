@@ -34,15 +34,14 @@ public static class ElasticsearchExtensions
     private static void AddDefaultMappings(ConnectionSettings settings)
     {
         settings
-            .DefaultMappingFor<Post>(m => m
-                .Ignore(p => p.IsPublished)
-                .PropertyName(p => p.ID, "id")
+            .DefaultMappingFor<Person>(m => m
+                .PropertyName(p => p.id, "id")
             )
-            .DefaultMappingFor<Comment>(m => m
-                .Ignore(c => c.Email)
-                .Ignore(c => c.IsAdmin)
-                .PropertyName(c => c.ID, "id")
-            );
+            // .DefaultMappingFor<Comment>(m => m
+            //     .Ignore(c => c.Email)
+            //     .Ignore(c => c.IsAdmin)
+            //     .PropertyName(c => c.ID, "id")
+            // );
     }
 }
 
@@ -88,3 +87,25 @@ public class Post
 
     public bool IsPublished { get; set; } = true;
 }
+
+
+
+public class Person
+{
+    public int id { get; set; };
+
+    public string first_name { get; set; }
+
+    public string last_name { get; set; }
+
+    public string gender { get; set; }
+
+    public string ip_address { get; set; }
+
+    public string cartype { get; set; }
+
+    public string state { get; set; }
+
+    public string zipcode { get; set; }
+}
+
