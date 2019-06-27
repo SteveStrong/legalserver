@@ -36,7 +36,7 @@ public static class ElasticsearchExtensions
         settings
             .DefaultMappingFor<Person>(m => m
                 .PropertyName(p => p.id, "id")
-            )
+            );
             // .DefaultMappingFor<Comment>(m => m
             //     .Ignore(c => c.Email)
             //     .Ignore(c => c.IsAdmin)
@@ -92,7 +92,7 @@ public class Post
 
 public class Person
 {
-    public int id { get; set; };
+    public int id { get; set; }
 
     public string first_name { get; set; }
 

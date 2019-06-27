@@ -24,7 +24,7 @@ namespace legalserver.Controllers
         [HttpGet("Find")]
         public async Task<IEnumerable<string>> Find(string query, int page = 1, int pageSize = 5)
         {
-            var response = await _elasticClient.SearchAsync<Object>(
+            var response = await _elasticClient.SearchAsync<Person>(
                 s => s.Query(q => q.QueryString(d => d.Query(query)))
             );
         
