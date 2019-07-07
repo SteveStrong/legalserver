@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Elasticsearch.Net;
 using Nest;
 
+// https://github.com/elastic/elasticsearch-net
+
 //https://github.com/miroslavpopovic/miniblog-elasticsearch/blob/master/src/Controllers/SearchController.cs
 // https://www.elastic.co/guide/en/elasticsearch/client/net-api/current/nest-getting-started.html
 
@@ -21,9 +23,30 @@ namespace legalserver.Controllers
             _elasticClient = elasticClient;
         }
 
+        [HttpGet("Test")]
+        public void Test()
+        {
+            var searchResponse = _elasticClient.Search<Person>(s => s
+                .Query(q => q
+                    .MatchAll()
+                )
+            );
+            var xxx = searchResponse;
+        }
+
         [HttpGet("Find")]
         public async Task<IEnumerable<string>> Find(string query, int page = 1, int pageSize = 5)
         {
+            var searchResponse = _elasticClient.Search<Project>(s => s
+                .Query(q => q
+                    .MatchAll()
+                )
+            );
+
+            var resx = _elasticClient.Search<Person>(
+                s => s.Query(q => q.QueryString(d => d.Query(query)))
+            );
+
             var response = await _elasticClient.SearchAsync<Person>(
                 s => s.Query(q => q.QueryString(d => d.Query(query)))
             );

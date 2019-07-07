@@ -5,7 +5,6 @@
             "sentID": "1302554P1S1",
             "text": "Citation Nr: 1302554",
             "rhetRole": [
-                "Sentence"
             ],
             "ruleCondition": "ADD",
             "nlpOutput": {}
@@ -23,7 +22,6 @@
             "sentID": "1302554P20S1",
             "text": "4. The Veteran did not have a psychiatric disorder in service that was unrelated to the use of drugs.",
             "rhetRole": [
-                "FindingSentence"
             ],
             "ruleCondition": "ADD",
             "nlpOutput": {}
@@ -31,9 +29,6 @@
         {
             "sentID": "1302554P21S1",
             "text": "5. The preponderance of the evidence shows that the Veteran does not have a psychiatric disorder that is related to his military service or was aggravated during service.",
-            "rhetRole": [
-                "FindingSentence"
-            ],
             "ruleCondition": "ADD",
             "nlpOutput": {}
         },

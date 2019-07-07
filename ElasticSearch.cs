@@ -89,10 +89,9 @@ public class Post
 }
 
 
-
 public class Person
 {
-    public int id { get; set; }
+    public string id { get; set; }
 
     public string first_name { get; set; }
 
